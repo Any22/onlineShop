@@ -1,6 +1,6 @@
 import React,{ useState, useEffect }  from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
-import { NavBar } from '../Components/NavBar';
+// import { NavBar } from '../Components/NavBar';
 import Loading from '../Components/Loading';
 import AllProducts from '../Components/AllProducts';
 import SelectedProducts from '../Components/SelectedProducts';
@@ -76,8 +76,7 @@ useEffect(() => {
 }
    return(
      <Router>
-   <main>
-     <NavBar/>    
+   <main>   
      <div className="mainApp">
      <button onClick={e => handleProductList(e)}>All Products</button>
      <select onChange={e => handleProductSelect(e)}>

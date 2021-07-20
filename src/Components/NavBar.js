@@ -3,7 +3,7 @@ import { navlinks } from '../utilities/links';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import store from '../Images/store.jpg';
-
+import { CartBtn } from '../Components/CartBtn'
 export const NavBar = () => {
     return (
         <NavContainer>
@@ -19,7 +19,7 @@ export const NavBar = () => {
 
             <ul className='nav-links'>
               {navlinks.map((navlink) => {
-               const { id, text, url } = navlink
+               const { id, text, url } = navlink;
                 return (
                  <li key={id}>
                   <Link to={url}>{text}</Link>
@@ -27,6 +27,7 @@ export const NavBar = () => {
                 );
               })}
             </ul>
+            <CartBtn/>
          </div>
        </NavContainer>
     )
@@ -37,7 +38,7 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom:grey solid 2px;
+  border-bottom:grey solid 1px;
   
   .nav-center {
     width: 90vw;
