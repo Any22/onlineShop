@@ -1,6 +1,6 @@
 import React,{ useState, useEffect }  from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
-// import { NavBar } from '../Components/NavBar';
+import styled from 'styled-components';
 import Loading from '../Components/Loading';
 import AllProducts from '../Components/AllProducts';
 import SelectedProducts from '../Components/SelectedProducts';
@@ -17,38 +17,40 @@ const [selection,setSelection]=useState(false);
 
 useEffect(() => {  
     /////////////////1. Fetching the data form API//////////////////////////////////////////////////////////////////////////
-    const fetchProducts = async () => {
-      setLoading(true);
-      try{
-        const response = await fetch(url);
-        const products = await response.json();
-        setLoading(false);
-        setProducts(products);
-        filterData(products);
-    /////////////////2.stopping the user interact with dropdown while list are loading/////////////////////////////////////
-      } catch (error) {
-        setLoading(false)
-        console.log(error)
-      }
+  const fetchProducts = async () => {
+    setLoading(true);
+    try{
+      const response = await fetch(url);
+      const products = await response.json();
+      setLoading(false);
+      setProducts(products);
+      filterData(products);
+  /////////////////2.stopping the user interact with dropdown while list are loading/////////////////////////////////////
+    } catch (error) {
+      setLoading(false)
+      console.log(error)
     }
-    fetchProducts();
+  }
+  fetchProducts();
     },[]);
  //3.Made a function to remove repeat occurance of the product category so unique categories can be picked only///
-    function filterData(products){
-        let selectOptions= [...new Set(products.map(product=>product.category))];
-        console.log(selectOptions);
-        setSelectProducts(selectOptions);
-        }
-        
-        function handleProductList(e){
-        setSelection(false);
-        }
-        function handleProductSelect(e){
-        console.log("Selected Product", e.target.value);
-        setSelectCategory(e.target.value);
-        setSelection(true);
-        }
-        if (loading)
+function filterData(products){
+    let selectOptions= [...new Set(products.map(product=>product.category))];
+    // console.log(selectOptions);
+    setSelectProducts(selectOptions);
+    }
+    
+    function handleProductList(e){
+    setSelection(false);
+    }
+    function handleProductSelect(e){
+    // console.log("Selected Product", e.target.value);
+    setSelectCategory(e.target.value);
+    setSelection(true);
+    }
+
+/////Conditional rendering to diplay the page components//////////////////////////////////////////////////////    
+if (loading)
 {
   return(
     <main>
@@ -60,7 +62,7 @@ useEffect(() => {
  if (!selection){
  return(
    <Router>  
-   <main>
+     <Wrapper>
      <div className="mainApp">
      {/* <button onClick={e => handleProductList(e)}>All Products</button> */}
      <select onChange={e => handleProductSelect(e)}>
@@ -69,14 +71,13 @@ useEffect(() => {
       ))}
     </select>
       <AllProducts products={products}/>
-  </div>
-  </main> 
+  </div> 
+  </Wrapper>
   </Router>
  );
 }
    return(
-     <Router>
-   <main>   
+     <Router>   
      <div className="mainApp">
      <button onClick={e => handleProductList(e)}>All Products</button>
      <select onChange={e => handleProductSelect(e)}>
@@ -88,10 +89,12 @@ useEffect(() => {
       <SelectedProducts products={products} value={selectCategory}/>
     </div>
    </div>
-  </main>
   </Router>
 ); 
-        
-
 }
+const Wrapper = styled.main`
+select {
+  margin-bottom: 20px;
+}
+`
 export default ProductsPage;

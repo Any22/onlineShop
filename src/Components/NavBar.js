@@ -27,7 +27,11 @@ export const NavBar = () => {
                 );
               })}
             </ul>
-            <CartBtn/>
+            <Link to ='/cart'>
+              <h5>my cart <CartBtn/></h5>
+            </Link>
+            
+            
          </div>
        </NavContainer>
     )
