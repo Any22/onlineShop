@@ -3,7 +3,7 @@ import { navlinks } from '../utilities/links';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import store from '../Images/store.jpg';
-import { CartBtn } from '../Components/CartBtn'
+// import { CartBtn } from '../Components/CartBtn'
 export const NavBar = () => {
     return (
         <NavContainer>
@@ -27,9 +27,9 @@ export const NavBar = () => {
                 );
               })}
             </ul>
-            <Link to ='/cart'>
+            {/* <Link to ='/cart'>
               <h5>my cart <CartBtn/></h5>
-            </Link>
+            </Link> */}
             
             
          </div>

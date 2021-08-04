@@ -7,7 +7,7 @@ export const navlinks = [
   },
   {
     id: 2,
-    text: 'products',
+    text: 'product',
     url: '/product',
   },
   

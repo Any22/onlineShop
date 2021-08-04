@@ -26,8 +26,7 @@ const HomePage = () => {
             </div>
           </div> */}
           {/* </Slide> */}
-        </Wrapper>
-                    
+        </Wrapper>              
     );
 }
  const Wrapper = styled.section`

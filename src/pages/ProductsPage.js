@@ -65,7 +65,7 @@ if (loading)
      <Wrapper>
      <div className="mainApp">
      {/* <button onClick={e => handleProductList(e)}>All Products</button> */}
-     <select onChange={e => handleProductSelect(e)}>
+     <select onChange={(e) => handleProductSelect(e)}>
       {selectProducts.map((selectProduct) => (
        <option key={selectProduct} value={selectProduct}>{selectProduct}</option>
       ))}
@@ -79,8 +79,8 @@ if (loading)
    return(
      <Router>   
      <div className="mainApp">
-     <button onClick={e => handleProductList(e)}>All Products</button>
-     <select onChange={e => handleProductSelect(e)}>
+     <button onClick={(e) => handleProductList(e)}>All Products</button>
+     <select onChange={(e)=> handleProductSelect(e)}>
       {selectProducts.map((selectProduct) => (
        <option key={selectProduct} value={selectProduct}>{selectProduct}</option>
       ))}

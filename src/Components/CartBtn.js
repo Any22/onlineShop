@@ -7,16 +7,12 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 // import RemoveIcon from "@material-ui/icons/Remove";
 
 export const  CartBtn = () => {
-    const [itemCount, setItemCount] = React.useState(1);
+    const [itemCount, setItemCount] = React.useState();
     return (
-        // setItemCount(0);
-        <div>
-        
+        setItemCount(1),
         <Badge color="secondary" badgeContent={itemCount}>
         <ShoppingCartIcon />{" "}
-        </Badge>
-        </div>
-        
+        </Badge>   
     );
   }
   
