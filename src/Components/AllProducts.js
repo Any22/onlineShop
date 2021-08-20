@@ -1,13 +1,21 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+// import { createBrowserHistory } from 'history';
 import styled from 'styled-components';
+// import CartPage from '../pages/CartPage';
+// import { Link } from 'react-router-dom';
 // https://www.codegrepper.com/code-examples/javascript/usehistory+react+router+dom
 const AllProducts = ({products}) => {
-  const history = useHistory();
-  const routeChange = () => { 
-    let path = `/cart`; 
-    history.push(path);
-  }
+  const history =useHistory();
+  // let handleClick  = () => { 
+    // history.push("/cartpage");
+    // alert("button has been clicked")
+    // console.log("think done!");
+  // }
+  // const routeChange = () =>{ 
+  //   let path = `/cartpage`; 
+  //   history.push(path);
+  // }
 
     return (
       <Wrapper>
@@ -17,7 +25,12 @@ const AllProducts = ({products}) => {
           <img src={product.image} alt={product.title}/> 
           <p>{product.title}</p><br/>
           <h4> ${product.price}</h4><br/>
-          <button id="addToCart"  onClick={routeChange}>Add to cart</button>
+          <button color="primary" className="btn"
+                onClick={()=>history.push('/cartpage')}
+                  >
+                  Add to cart
+                </button>
+          {/* <Link to="/cartpage" className="btn btn-primary">Sign up</Link> */}
           {/* <div className="spaceBetweenButtons"></div>
           <button id="productDetail">Product details</button> */}
         </div>

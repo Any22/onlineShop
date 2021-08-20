@@ -6,6 +6,7 @@ import { NavBar } from './Components/NavBar';
 import { Offers }  from './Components/Offers';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
+import CartPage from './pages/CartPage';
 // import CartPage from './pages/CartPage';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/"><HomePage/></Route>
         <Route exact path="/product"><ProductsPage/></Route>
+        <Route exact path="/cartpage"><CartPage/></Route>
         <Route path="*">
         <h2>Page Not Found</h2>
       </Route>

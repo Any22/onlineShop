@@ -1,19 +1,21 @@
 import React from 'react';
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Badge from "@material-ui/core/Badge";
-import styled from 'styled-components';
+// import ButtonGroup from "@material-ui/core/ButtonGroup";
+// import Badge from "@material-ui/core/Badge";
+// import styled from 'styled-components';
 // import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Button from "@material-ui/core/Button";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
+// import Button from "@material-ui/core/Button";
+// import AddIcon from "@material-ui/icons/Add";
+// import RemoveIcon from "@material-ui/icons/Remove";
 
 const CartPage = () => {
-    const [itemCount, setItemCount] = React.useState(1);
+    // const [itemCount, setItemCount] = React.useState(1);
     return(
-        <Wrapper>
+        // <Wrapper>
             <div >
-            
-            <Badge color="secondary" badgeContent={itemCount}>
+              <h3 >cart page </h3>
+              </div>
+   
+            /* <Badge color="secondary" badgeContent={itemCount}>
             </Badge>
           
         <ButtonGroup>
@@ -34,12 +36,12 @@ const CartPage = () => {
               <AddIcon fontSize="small" />
             </Button>
           </ButtonGroup>
-        </div>
-        </Wrapper>
+        </div> */
+        // </Wrapper>
         
     );
 }
-const Wrapper = styled.section`
+// const Wrapper = styled.section`
   
-`
+// `
 export default CartPage;
