@@ -12,7 +12,7 @@ const HomePage = () => {
         <Wrapper>
           <div className="section">
             <div style={{'backgroundImage': `url(${home})`}}>
-              <span>Slide 1</span>
+              {/* <span>Slide 1</span> */}
             </div>
           </div>
           {/* <div className="section">

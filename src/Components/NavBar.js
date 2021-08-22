@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import { navlinks } from '../utilities/links';
-import { FaBars } from 'react-icons/fa';
+import { FaBars} from 'react-icons/fa';
 import styled from 'styled-components';
 import store from '../Images/store.jpg';
 // import { CartBtn } from '../Components/CartBtn'
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+const divStyle = {
+  color:'black',
+};
 export const NavBar = () => {
     return (
         <NavContainer>
@@ -26,12 +30,10 @@ export const NavBar = () => {
                  </li>
                 );
               })}
-            </ul>
-            {/* <Link to ='/cart'>
-              <h5>my cart <CartBtn/></h5>
-            </Link> */}
-            
-            
+            </ul> 
+            <Link to ='/cartpage'>
+              <ShoppingCartIcon style={divStyle}/>{" "}
+            </Link>
          </div>
        </NavContainer>
     )
@@ -47,6 +49,7 @@ const NavContainer = styled.nav`
   .nav-center {
     width: 90vw;
     margin: 40px 20px;
+    color:black;
     max-width: var(--max-width);
     }
   .nav-header {
@@ -66,8 +69,9 @@ const NavContainer = styled.nav`
     }
     .nav-links {
     display: none;
+    color:black;
     }
-       @media (min-width: 992px) {
+   @media (min-width: 992px) {
     .nav-toggle {
       display: none;
     }

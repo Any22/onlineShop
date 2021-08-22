@@ -10,9 +10,5 @@ export const navlinks = [
     text: 'product',
     url: '/product',
   },
-  {
-    id: 3,
-    text: 'cart',
-    url: '/cartpage',
-  },
+
 ]
